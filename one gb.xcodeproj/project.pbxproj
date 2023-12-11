@@ -15,6 +15,7 @@
 		E61BAE572B27827100E337A7 /* SafariViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61BAE562B27827100E337A7 /* SafariViewController.swift */; };
 		E61BAE592B27865400E337A7 /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61BAE582B27865400E337A7 /* VideoPlayerView.swift */; };
 		E61BAE5B2B27869B00E337A7 /* Animasyon_1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E61BAE5A2B27869B00E337A7 /* Animasyon_1.mp4 */; };
+		E61BAE5D2B27A66C00E337A7 /* GameStoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61BAE5C2B27A66C00E337A7 /* GameStoreView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		E61BAE562B27827100E337A7 /* SafariViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariViewController.swift; sourceTree = "<group>"; };
 		E61BAE582B27865400E337A7 /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
 		E61BAE5A2B27869B00E337A7 /* Animasyon_1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Animasyon_1.mp4; sourceTree = "<group>"; };
+		E61BAE5C2B27A66C00E337A7 /* GameStoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStoreView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				E61BAE562B27827100E337A7 /* SafariViewController.swift */,
 				E61BAE582B27865400E337A7 /* VideoPlayerView.swift */,
 				E61BAE5A2B27869B00E337A7 /* Animasyon_1.mp4 */,
+				E61BAE5C2B27A66C00E337A7 /* GameStoreView.swift */,
 			);
 			path = onegb;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 				E61BAE442B27664000E337A7 /* onegbApp.swift in Sources */,
 				E61BAE572B27827100E337A7 /* SafariViewController.swift in Sources */,
 				E61BAE532B276C9500E337A7 /* ContentView.swift in Sources */,
+				E61BAE5D2B27A66C00E337A7 /* GameStoreView.swift in Sources */,
 				E61BAE592B27865400E337A7 /* VideoPlayerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -23,7 +23,7 @@ struct ContentView: View {
                     Image(systemName: "megaphone.fill")
                     
                 }
-            Tap1View()
+            GameStoreView()
                 .tabItem {
                     Image(systemName: "gamecontroller.fill")
                     
@@ -59,87 +59,103 @@ struct CampaignView: View {
     var url = URL(string: "https://preview.codecanyon.net/item/in-orbit-html5-construct-game/full_screen_preview/36216337?_ga=2.266465802.585344652.1655104579-1885358847.1655104579")
     
     var surls2 = URL(string: "https://www.youtube.com/watch?v=W3aASjY-H9g")
-    
     @State private var showTap4View = false
     
-    
     var body: some View {
-        VStack {
-            Text("Campaign")
-                .font(.body)
-            
-            // Add Image Carousel here
-            Image("poster1")
-                .resizable()
-                .scaledToFit()
-            
-            HStack {
-                Button(action: {
-                    isShowingSafariView.toggle()
-                }) {
-                    Text("Play Now")
-                        .foregroundColor(.white)
-                        .padding()
-                        .background(Color(hex: "07D3C9"))
-                        .cornerRadius(10)
-                        .shadow(color: .black, radius: 3)
+        ScrollView {
+            VStack(alignment: .leading, spacing: 12) {
+                SectionHeaderView(title: "Campaign")
+                
+                Image("poster1")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(maxWidth: .infinity, maxHeight: 150)
+                    .clipped()
+                
+                HStack(spacing: 12) {
+                    Spacer()
+                    Button("Play Now") {
+                        isShowingSafariView.toggle()
+                    }
+                    .buttonStyle(CustomButtonStyle(backgroundColor: Color(hex: "07D3C9")))
+
+                    Button("Read 2 Win") {
+                        self.isShowingPopup.toggle()
+                    }
+                    .buttonStyle(CustomButtonStyle(backgroundColor: .orange))
+                    Spacer()
                 }
-                .padding(.horizontal)
+                
                 .sheet(isPresented: $isShowingSafariView) {
                     SafariViewController(url: url!)
-                }
-                
-                
-                Button(action: {
-                    self.isShowingPopup.toggle()
-                }) {
-                    Text("Read 2 Win")
                 }
                 .sheet(isPresented: $isShowingPopup) {
                     PopupView()
                 }
-                .padding()
-                .background(Color.green)
-                .foregroundColor(.white)
-                .cornerRadius(10)
-                
-            }
-            
-            
-            Text("Referral")
-                .font(.body)
-            // Placeholder for the image banner
-            Image("poster2")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(height: 120)
-            
-            Text("Winning Services")
-                .font(.body)
-            // Placeholder for the image banner
-            Image("poster4")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(height: 120)
-            
-            
-            Button(action: {
-                            self.showTap4View = true
-                        }) {
-                            Image("poster3")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(height: 200)
-                        }
-                        .sheet(isPresented: $showTap4View) {
-                            Tap4View()
-                        }
-                    
-            
 
+                SectionHeaderView(title: "Referral")
+                
+                Image("poster2")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(maxWidth: .infinity) // Sets the width to fill the available space
+                    .frame(height: 120) // Sets the fixed height of the image
+
+                
+                SectionHeaderView(title: "Winning Services")
+
+                Image("poster4")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(maxWidth: .infinity) // Sets the width to fill the available space
+                    .frame(height: 120) // Sets the fixed height of the image
+
+                SectionHeaderView(title: "Ads")
+                
+                Button(action: {
+                    self.showTap4View = true
+                }) {
+                    Image("poster3")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(maxWidth: .infinity) // Sets the width to fill the available space
+                        .frame(height: 120) // Sets the fixed height of the image
+
+                }
+                .sheet(isPresented: $showTap4View) {
+                    Tap4View()
+                }
+            }
+            .padding(.horizontal)
         }
     }
 }
+
+struct SectionHeaderView: View {
+    let title: String
+    
+    var body: some View {
+        Text(title)
+            .font(.headline)
+            .padding(.vertical, 2) // Reduced vertical padding
+            .padding(.leading)
+    }
+}
+
+struct CustomButtonStyle: ButtonStyle {
+    var backgroundColor: Color
+    
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .foregroundColor(.white)
+            .padding()
+            .background(backgroundColor)
+            .cornerRadius(10)
+            .shadow(color: .black.opacity(0.15), radius: 3)
+            .scaleEffect(configuration.isPressed ? 0.95 : 1.0)
+    }
+}
+
 
 struct Tap1View: View {
     var body: some View {
@@ -163,9 +179,9 @@ struct Tap2View: View {
     var body: some View {
         VStack {
             VStack {
-                Text("Ads")
+                Text("Gift")
                     .font(.largeTitle)
-                Text("Winning Services")
+                Text("Gift View or Redeem")
                     .font(.largeTitle)
                 
                 // Add 5 images and See All option here
@@ -177,15 +193,15 @@ struct Tap2View: View {
 struct Tap3View: View {
     var body: some View {
         VStack {
-            Text("Ads")
+            Text("Wallet")
                 .font(.largeTitle)
             
-            // Placeholder for the image banner
-            Image("poster3")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(height: 200)
-        }
+//            // Placeholder for the image banner
+//            Image("poster3")
+//                .resizable()
+//                .aspectRatio(contentMode: .fit)
+//                .frame(height: 200)
+       }
     }
 }
 
