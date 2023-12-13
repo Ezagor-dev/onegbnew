@@ -23,6 +23,9 @@
 		E61BAE672B29D74C00E337A7 /* ClickableGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61BAE662B29D74C00E337A7 /* ClickableGameView.swift */; };
 		E61BAE692B29D88D00E337A7 /* soru.gif in Resources */ = {isa = PBXBuildFile; fileRef = E61BAE682B29D88D00E337A7 /* soru.gif */; };
 		E61BAE6C2B29DEF100E337A7 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61BAE6B2B29DEF100E337A7 /* Package.swift */; };
+		E61BAE702B29F63D00E337A7 /* TextMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61BAE6F2B29F63D00E337A7 /* TextMessageView.swift */; };
+		E61BAE722B29FA2800E337A7 /* MessageInBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61BAE712B29FA2800E337A7 /* MessageInBoxView.swift */; };
+		E61BAE742B2A053000E337A7 /* PromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61BAE732B2A053000E337A7 /* PromptView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +47,9 @@
 		E61BAE662B29D74C00E337A7 /* ClickableGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickableGameView.swift; sourceTree = "<group>"; };
 		E61BAE682B29D88D00E337A7 /* soru.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = soru.gif; sourceTree = "<group>"; };
 		E61BAE6B2B29DEF100E337A7 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		E61BAE6F2B29F63D00E337A7 /* TextMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMessageView.swift; sourceTree = "<group>"; };
+		E61BAE712B29FA2800E337A7 /* MessageInBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageInBoxView.swift; sourceTree = "<group>"; };
+		E61BAE732B2A053000E337A7 /* PromptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +82,7 @@
 		E61BAE422B27664000E337A7 /* onegb */ = {
 			isa = PBXGroup;
 			children = (
+				E61BAE6D2B29E32A00E337A7 /* gif */,
 				E61BAE432B27664000E337A7 /* onegbApp.swift */,
 				E61BAE452B27664000E337A7 /* SignInView.swift */,
 				E61BAE472B27664200E337A7 /* Assets.xcassets */,
@@ -91,8 +98,10 @@
 				E61BAE622B29BF7A00E337A7 /* TodayView.swift */,
 				E61BAE642B29D28F00E337A7 /* PushBoxSpamView.swift */,
 				E61BAE662B29D74C00E337A7 /* ClickableGameView.swift */,
-				E61BAE682B29D88D00E337A7 /* soru.gif */,
 				E61BAE6B2B29DEF100E337A7 /* Package.swift */,
+				E61BAE6F2B29F63D00E337A7 /* TextMessageView.swift */,
+				E61BAE712B29FA2800E337A7 /* MessageInBoxView.swift */,
+				E61BAE732B2A053000E337A7 /* PromptView.swift */,
 			);
 			path = onegb;
 			sourceTree = "<group>";
@@ -103,6 +112,14 @@
 				E61BAE4B2B27664200E337A7 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E61BAE6D2B29E32A00E337A7 /* gif */ = {
+			isa = PBXGroup;
+			children = (
+				E61BAE682B29D88D00E337A7 /* soru.gif */,
+			);
+			path = gif;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +168,7 @@
 			mainGroup = E61BAE372B27664000E337A7;
 			packageReferences = (
 				E61BAE6A2B29DDE200E337A7 /* XCRemoteSwiftPackageReference "SSSwiftUIGIFView" */,
+				E61BAE6E2B29EAEC00E337A7 /* XCRemoteSwiftPackageReference "SwiftyGif" */,
 			);
 			productRefGroup = E61BAE412B27664000E337A7 /* Products */;
 			projectDirPath = "";
@@ -181,9 +199,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E61BAE6C2B29DEF100E337A7 /* Package.swift in Sources */,
+				E61BAE702B29F63D00E337A7 /* TextMessageView.swift in Sources */,
 				E61BAE462B27664000E337A7 /* SignInView.swift in Sources */,
 				E61BAE442B27664000E337A7 /* onegbApp.swift in Sources */,
 				E61BAE612B29AFB800E337A7 /* GiftBoxView.swift in Sources */,
+				E61BAE722B29FA2800E337A7 /* MessageInBoxView.swift in Sources */,
 				E61BAE572B27827100E337A7 /* SafariViewController.swift in Sources */,
 				E61BAE632B29BF7A00E337A7 /* TodayView.swift in Sources */,
 				E61BAE5F2B27AFC200E337A7 /* WalletView.swift in Sources */,
@@ -191,6 +211,7 @@
 				E61BAE652B29D28F00E337A7 /* PushBoxSpamView.swift in Sources */,
 				E61BAE5D2B27A66C00E337A7 /* GameStoreView.swift in Sources */,
 				E61BAE592B27865400E337A7 /* VideoPlayerView.swift in Sources */,
+				E61BAE742B2A053000E337A7 /* PromptView.swift in Sources */,
 				E61BAE672B29D74C00E337A7 /* ClickableGameView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,6 +439,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.0.0;
+			};
+		};
+		E61BAE6E2B29EAEC00E337A7 /* XCRemoteSwiftPackageReference "SwiftyGif" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kirualex/SwiftyGif.git";
+			requirement = {
+				kind = exactVersion;
+				version = 5.4.4;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

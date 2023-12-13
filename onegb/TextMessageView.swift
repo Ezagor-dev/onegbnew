@@ -1,5 +1,5 @@
 //
-//  ClickableGameView.swift
+//  TextMessageView.swift
 //  onegb
 //
 //  Created by Ezagor on 13.12.2023.
@@ -7,18 +7,16 @@
 
 import SwiftUI
 
-struct ChatMessage: Identifiable {
+struct ChatMessageText: Identifiable {
     let id = UUID()
     let text: String
     let isUser: Bool // Determine if the message is from the user or the system
 }
-struct ClickableGameView: View {
+struct TextMessageView: View {
     let header: String
     let description: String
-    let options: [String]
-    let correctOption: String
     let brand: String
-    let banner:String
+    
     @State private var selectedOption: String?
     @State private var messages: [String] = []
     @State private var gamePlayed = false
@@ -28,7 +26,7 @@ struct ClickableGameView: View {
         VStack {
             ScrollView {
                 ForEach(messages, id: \.self) { message in
-                    MessageBubble(message: message, isUser: message.contains("You are correct") || message.contains("Not quite right"))
+                    MessageBubbleText(message: message, isUser: message.contains("You are correct") || message.contains("Not quite right"))
                 }
             }
             
@@ -39,38 +37,22 @@ struct ClickableGameView: View {
                         .font(.headline)
                         .padding()
                     
-                    Image(banner) // Replace with your actual image or gif name in the assets
-                        .resizable()
-                        .scaledToFit()
-                        .frame(height: 200)
-                        .padding()
+                    
                     
                     Text(description)
                         .font(.body)
                         .padding()
                     
-                    ForEach(options, id: \.self) { option in
-                        Button(action: {
-                            self.selectedOption = option
-                        }) {
-                            Text(option)
-                                .frame(maxWidth: .infinity)
-                                .padding()
-                                .background(self.selectedOption == option ? Color.blue : Color.gray)
-                                .foregroundColor(.white)
-                                .cornerRadius(10)
-                        }
-                        .padding(.bottom, 2)
-                    }
+                   
                     
-                    Button("BUL KAZAN") {
-                        guard let selected = selectedOption else { return }
-                        let result = checkAnswer(selected: selected)
-                        messages.append(result.message)
-                        metabytePoints += result.points
+                    Button("BAŞLA") {
+                        
+                        
+                        
+                        metabytePoints += 1
                         gamePlayed = true
                         // Append system message about Metabyte points
-                        let systemMessage = "\(brand) rewarded you \(result.points) Metabyte points!"
+                        let systemMessage = "\(brand) rewarded you \(metabytePoints) Metabyte points!"
                         messages.append(systemMessage)
                     }
                     .disabled(selectedOption == nil)
@@ -92,16 +74,10 @@ struct ClickableGameView: View {
         .navigationTitle("Game Chat")
     }
     
-    private func checkAnswer(selected: String) -> (message: String, points: Int) {
-        if selected == correctOption {
-            return ("You are correct!", 10)
-        } else {
-            return ("Not quite right, but it's okay.", 1)
-        }
-    }
+    
 }
 
-struct MessageBubble: View {
+struct MessageBubbleText: View {
     var message: String
     var isUser: Bool
     
@@ -119,15 +95,13 @@ struct MessageBubble: View {
     }
 }
 
-struct ClickableGameView_Previews: PreviewProvider {
+struct TextMessageView_Previews: PreviewProvider {
     static var previews: some View {
-        ClickableGameView(
+        TextMessageView(
             header: "Which is the correct one",
             description: "Make your choice!",
-            options: ["Option A", "Option B", "Option C"],
-            correctOption: "Option B",
-            brand: "BoşYok",
-            banner: "soru1"
+            brand: "BoşYok"
+            
         )
     }
 }

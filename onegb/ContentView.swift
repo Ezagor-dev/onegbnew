@@ -4,6 +4,22 @@
 //
 //  Created by Ezagor on 11.12.2023.
 //
+//davet et kazan
+//loyalt
+//bip mesajlar kısmı pushboxview
+//last in first out
+// ne kazandığı belli olsun yanında
+// toplamda kaç metabyte kazandı bundan
+// toplamda o markadan kaç metabyte kazandı
+// katalogtaki marka kırılımları da burada görebilelim
+
+// pepsi bir tane örnek trivia atar cevapla kazan clickable game
+// trivia soru da sorabilir banner yerine hangisi pepsi grubuna ait değildir bilirsen 5 bilemezsen 1 metabyte diye
+
+// boşyok diyelim bir spam ileti attı tıkladı kullanıcı ve sonrasında chatbot ekranında cevaplayabilsin oyunu oynasın boşyok bip akışı
+
+// kendi chatbot asistanımız olsun. kullanıcı bize soru sorarsa 0 metabyte, yapay zeka ile konuşursa 10 metabyte diyelim.
+//kullanıcı bize hollandaya gideceğim esim lazım derse ona göre akış gönderelim
 
 import SwiftUI
 import SafariServices
@@ -11,82 +27,60 @@ import AVKit
 
 // tab view 
 struct ContentView: View {
-    @State private var isShowingSafariView = false
-    
-    var url = URL(string: "https://www.youtube.com/watch?v=W3aASjY-H9g")
-    
-    
+    // State variables for controlling views and data
+    @State private var selectedTab: Int = 0
+
     var body: some View {
-        TabView {
+        TabView(selection: $selectedTab) {
             CampaignView()
                 .tabItem {
-                    Image(systemName: "megaphone.fill")
-                    
+                    Label("Campaign", systemImage: "megaphone.fill")
                 }
+                .tag(0)
+
             GameStoreView()
                 .tabItem {
-                    Image(systemName: "gamecontroller.fill")
-                    
+                    Label("Games", systemImage: "gamecontroller.fill")
                 }
-            
-            GiftBoxView()
+                .tag(1)
+
+            WalletView()
                 .tabItem {
-                    Image(systemName: "gift.fill")
-                    
+                    Label("Wallet", systemImage: "wallet.pass.fill")
                 }
-            
-            Tap3View()
-                .tabItem {
-                    Image(systemName: "wallet.pass.fill")
-                    
-                }
-            MateSimView()
-                .tabItem {
-                    Text("MateSIM")
-                    Image(systemName: "network")
-                    
-                }
-            
-            Tap4View() 
-                .tabItem {
-                    Text("Ads")
-                    Image(systemName: "film.fill")
-                    
-                }
+                .tag(2)
+
             PushBoxView()
                 .tabItem {
-                    Text("PushBox")
-                    Image(systemName: "greetingcard.fill")
-                    
+                    Label("Inbox", systemImage: "envelope.fill")
                 }
-            
+                .tag(3)
+
+            MateSimView()
+                .tabItem {
+                    Label("MateSIM", systemImage: "antenna.radiowaves.left.and.right")
+                }
+                .tag(4)
+
+            PushBoxView()
+                .tabItem {
+                    Label("PushBox", systemImage: "tray.fill")
+                }
+                .tag(5)
+
             TodayView()
                 .tabItem {
-                    Text("Today")
-                    Image(systemName: "cursorarrow.motionlines")
-                    
+                    Label("Today", systemImage: "calendar")
                 }
-                
-            //davet et kazan
-            //loyalt
-            //bip mesajlar kısmı pushboxview
-            //last in first out
-            // ne kazandığı belli olsun yanında
-            // toplamda kaç metabyte kazandı bundan
-            // toplamda o markadan kaç metabyte kazandı
-            // katalogtaki marka kırılımları da burada görebilelim 
-            
-            // pepsi bir tane örnek trivia atar cevapla kazan clickable game
-            // trivia soru da sorabilir banner yerine hangisi pepsi grubuna ait değildir bilirsen 5 bilemezsen 1 metabyte diye
-            
-            // boşyok diyelim bir spam ileti attı tıkladı kullanıcı ve sonrasında chatbot ekranında cevaplayabilsin oyunu oynasın boşyok bip akışı
-            
-            // kendi chatbot asistanımız olsun. kullanıcı bize soru sorarsa 0 metabyte, yapay zeka ile konuşursa 10 metabyte diyelim.
-            //kullanıcı bize hollandaya gideceğim esim lazım derse ona göre akış gönderelim
+                .tag(6)
         }
+        .accentColor(.primary) // Change to brand color if needed
+        .environmentObject(UserViewModel()) // Assuming you have a ViewModel for user data
     }
 }
-
+class UserViewModel: ObservableObject {
+    // User data and functions go here
+}
 struct CampaignView: View {
     @State private var isShowingPopup = false
     @State private var isShowingSafariView = false
@@ -241,7 +235,7 @@ struct Tap3View: View {
 struct PushBoxView: View {
     var body: some View {
         VStack {
-            WalletView()
+            PushBoxSpamView()
             
 //            // Placeholder for the image banner
 //            Image("poster3")
