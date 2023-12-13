@@ -40,15 +40,42 @@ struct ContentView: View {
                     Image(systemName: "wallet.pass.fill")
                     
                 }
-            
-            Tap4View() 
+            MateSimView()
                 .tabItem {
+                    Text("MateSIM")
                     Image(systemName: "network")
                     
                 }
+            
+            Tap4View() 
+                .tabItem {
+                    Text("Ads")
+                    Image(systemName: "film.fill")
+                    
+                }
+            PushBoxView()
+                .tabItem {
+                    Text("PushBox")
+                    Image(systemName: "greetingcard.fill")
+                    
+                }
                 
+            //davet et kazan
+            //loyalt
+            //bip mesajlar kısmı pushboxview
+            //last in first out
+            // ne kazandığı belli olsun yanında
+            // toplamda kaç metabyte kazandı bundan
+            // toplamda o markadan kaç metabyte kazandı
+            // katalogtaki marka kırılımları da burada görebilelim 
             
+            // pepsi bir tane örnek trivia atar cevapla kazan clickable game
+            // trivia soru da sorabilir banner yerine hangisi pepsi grubuna ait değildir bilirsen 5 bilemezsen 1 metabyte diye
             
+            // boşyok diyelim bir spam ileti attı tıkladı kullanıcı ve sonrasında chatbot ekranında cevaplayabilsin oyunu oynasın boşyok bip akışı
+            
+            // kendi chatbot asistanımız olsun. kullanıcı bize soru sorarsa 0 metabyte, yapay zeka ile konuşursa 10 metabyte diyelim.
+            //kullanıcı bize hollandaya gideceğim esim lazım derse ona göre akış gönderelim
         }
     }
 }
@@ -194,6 +221,34 @@ struct Tap3View: View {
     var body: some View {
         VStack {
             WalletView()
+            
+//            // Placeholder for the image banner
+//            Image("poster3")
+//                .resizable()
+//                .aspectRatio(contentMode: .fit)
+//                .frame(height: 200)
+       }
+    }
+}
+
+struct PushBoxView: View {
+    var body: some View {
+        VStack {
+            WalletView()
+            
+//            // Placeholder for the image banner
+//            Image("poster3")
+//                .resizable()
+//                .aspectRatio(contentMode: .fit)
+//                .frame(height: 200)
+       }
+    }
+}
+
+struct MateSimView: View {
+    var body: some View {
+        VStack {
+            CampaignView()
             
 //            // Placeholder for the image banner
 //            Image("poster3")
