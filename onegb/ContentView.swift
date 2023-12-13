@@ -29,7 +29,7 @@ struct ContentView: View {
                     
                 }
             
-            Tap2View()
+            GiftBoxView()
                 .tabItem {
                     Image(systemName: "gift.fill")
                     
@@ -193,8 +193,7 @@ struct Tap2View: View {
 struct Tap3View: View {
     var body: some View {
         VStack {
-            Text("Wallet")
-                .font(.largeTitle)
+            WalletView()
             
 //            // Placeholder for the image banner
 //            Image("poster3")
