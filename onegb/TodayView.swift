@@ -44,7 +44,7 @@ let ProductCategories: [ProductCategory] = [
 
 struct TodayView: View {
     @State private var isShowingDetail = false
-    @State private var selectedProduct: Product?
+    @State private var selectedProductName: String?
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 12) {
@@ -80,8 +80,10 @@ struct TodayView: View {
                                 Spacer()
                                 
                                 Button(action: {
-                                    self.selectedProduct = game
-                                    self.isShowingDetail = true
+                                    DispatchQueue.main.async {
+                                        self.selectedProductName = game.name
+                                        self.isShowingDetail = true
+                                    }
                                 }) {
                                     Text("Get")
                                         .foregroundColor(.blue)
@@ -96,12 +98,16 @@ struct TodayView: View {
                             .padding(.vertical)
                     }
                 }
-            }.sheet(isPresented: $isShowingDetail) {
-                if let selectedProduct = selectedProduct, selectedProduct.name == "Çekilişe Katıl" {
+            }.sheet(isPresented: $isShowingDetail, onDismiss: {
+                // Reset the state when the sheet is dismissed
+                self.selectedProductName = nil
+            }) {
+                // Check if the selected product is "Çekilişe Katıl" and show the appropriate view
+                if selectedProductName == "Çekilişe Katıl" {
                     RaffleView()
                 } else {
-                    // Fallback or details for other products
-                    Text("Details for other products")
+                    // Provide a generic detail view for other products or specific views based on the product name
+                    Text("Details for \(selectedProductName ?? "the product")")
                 }
             }
             

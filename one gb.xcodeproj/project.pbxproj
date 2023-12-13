@@ -19,6 +19,10 @@
 		E61BAE5F2B27AFC200E337A7 /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61BAE5E2B27AFC200E337A7 /* WalletView.swift */; };
 		E61BAE612B29AFB800E337A7 /* GiftBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61BAE602B29AFB800E337A7 /* GiftBoxView.swift */; };
 		E61BAE632B29BF7A00E337A7 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61BAE622B29BF7A00E337A7 /* TodayView.swift */; };
+		E61BAE652B29D28F00E337A7 /* PushBoxSpamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61BAE642B29D28F00E337A7 /* PushBoxSpamView.swift */; };
+		E61BAE672B29D74C00E337A7 /* ClickableGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61BAE662B29D74C00E337A7 /* ClickableGameView.swift */; };
+		E61BAE692B29D88D00E337A7 /* soru.gif in Resources */ = {isa = PBXBuildFile; fileRef = E61BAE682B29D88D00E337A7 /* soru.gif */; };
+		E61BAE6C2B29DEF100E337A7 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61BAE6B2B29DEF100E337A7 /* Package.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +40,10 @@
 		E61BAE5E2B27AFC200E337A7 /* WalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletView.swift; sourceTree = "<group>"; };
 		E61BAE602B29AFB800E337A7 /* GiftBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftBoxView.swift; sourceTree = "<group>"; };
 		E61BAE622B29BF7A00E337A7 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
+		E61BAE642B29D28F00E337A7 /* PushBoxSpamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushBoxSpamView.swift; sourceTree = "<group>"; };
+		E61BAE662B29D74C00E337A7 /* ClickableGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickableGameView.swift; sourceTree = "<group>"; };
+		E61BAE682B29D88D00E337A7 /* soru.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = soru.gif; sourceTree = "<group>"; };
+		E61BAE6B2B29DEF100E337A7 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +89,10 @@
 				E61BAE5E2B27AFC200E337A7 /* WalletView.swift */,
 				E61BAE602B29AFB800E337A7 /* GiftBoxView.swift */,
 				E61BAE622B29BF7A00E337A7 /* TodayView.swift */,
+				E61BAE642B29D28F00E337A7 /* PushBoxSpamView.swift */,
+				E61BAE662B29D74C00E337A7 /* ClickableGameView.swift */,
+				E61BAE682B29D88D00E337A7 /* soru.gif */,
+				E61BAE6B2B29DEF100E337A7 /* Package.swift */,
 			);
 			path = onegb;
 			sourceTree = "<group>";
@@ -137,6 +149,9 @@
 				Base,
 			);
 			mainGroup = E61BAE372B27664000E337A7;
+			packageReferences = (
+				E61BAE6A2B29DDE200E337A7 /* XCRemoteSwiftPackageReference "SSSwiftUIGIFView" */,
+			);
 			productRefGroup = E61BAE412B27664000E337A7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -152,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E61BAE5B2B27869B00E337A7 /* Animasyon_1.mp4 in Resources */,
+				E61BAE692B29D88D00E337A7 /* soru.gif in Resources */,
 				E61BAE4C2B27664200E337A7 /* Preview Assets.xcassets in Resources */,
 				E61BAE482B27664200E337A7 /* Assets.xcassets in Resources */,
 			);
@@ -164,6 +180,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E61BAE6C2B29DEF100E337A7 /* Package.swift in Sources */,
 				E61BAE462B27664000E337A7 /* SignInView.swift in Sources */,
 				E61BAE442B27664000E337A7 /* onegbApp.swift in Sources */,
 				E61BAE612B29AFB800E337A7 /* GiftBoxView.swift in Sources */,
@@ -171,8 +188,10 @@
 				E61BAE632B29BF7A00E337A7 /* TodayView.swift in Sources */,
 				E61BAE5F2B27AFC200E337A7 /* WalletView.swift in Sources */,
 				E61BAE532B276C9500E337A7 /* ContentView.swift in Sources */,
+				E61BAE652B29D28F00E337A7 /* PushBoxSpamView.swift in Sources */,
 				E61BAE5D2B27A66C00E337A7 /* GameStoreView.swift in Sources */,
 				E61BAE592B27865400E337A7 /* VideoPlayerView.swift in Sources */,
+				E61BAE672B29D74C00E337A7 /* ClickableGameView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,6 +410,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E61BAE6A2B29DDE200E337A7 /* XCRemoteSwiftPackageReference "SSSwiftUIGIFView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SimformSolutionsPvtLtd/SSSwiftUIGIFView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = E61BAE382B27664000E337A7 /* Project object */;
 }

@@ -59,6 +59,13 @@ struct ContentView: View {
                     Image(systemName: "greetingcard.fill")
                     
                 }
+            
+            TodayView()
+                .tabItem {
+                    Text("Today")
+                    Image(systemName: "cursorarrow.motionlines")
+                    
+                }
                 
             //davet et kazan
             //loyalt
