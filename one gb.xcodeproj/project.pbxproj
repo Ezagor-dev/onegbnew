@@ -26,6 +26,8 @@
 		E61BAE702B29F63D00E337A7 /* TextMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61BAE6F2B29F63D00E337A7 /* TextMessageView.swift */; };
 		E61BAE722B29FA2800E337A7 /* MessageInBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61BAE712B29FA2800E337A7 /* MessageInBoxView.swift */; };
 		E61BAE742B2A053000E337A7 /* PromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61BAE732B2A053000E337A7 /* PromptView.swift */; };
+		E61BAE9D2B2AEE8B00E337A7 /* OneSIM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61BAE9C2B2AEE8B00E337A7 /* OneSIM.swift */; };
+		E61BAE9F2B2B14A800E337A7 /* CountryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61BAE9E2B2B14A800E337A7 /* CountryDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		E61BAE6F2B29F63D00E337A7 /* TextMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMessageView.swift; sourceTree = "<group>"; };
 		E61BAE712B29FA2800E337A7 /* MessageInBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageInBoxView.swift; sourceTree = "<group>"; };
 		E61BAE732B2A053000E337A7 /* PromptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptView.swift; sourceTree = "<group>"; };
+		E61BAE9C2B2AEE8B00E337A7 /* OneSIM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneSIM.swift; sourceTree = "<group>"; };
+		E61BAE9E2B2B14A800E337A7 /* CountryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,8 @@
 				E61BAE6F2B29F63D00E337A7 /* TextMessageView.swift */,
 				E61BAE712B29FA2800E337A7 /* MessageInBoxView.swift */,
 				E61BAE732B2A053000E337A7 /* PromptView.swift */,
+				E61BAE9C2B2AEE8B00E337A7 /* OneSIM.swift */,
+				E61BAE9E2B2B14A800E337A7 /* CountryDetailView.swift */,
 			);
 			path = onegb;
 			sourceTree = "<group>";
@@ -198,8 +204,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E61BAE9F2B2B14A800E337A7 /* CountryDetailView.swift in Sources */,
 				E61BAE6C2B29DEF100E337A7 /* Package.swift in Sources */,
 				E61BAE702B29F63D00E337A7 /* TextMessageView.swift in Sources */,
+				E61BAE9D2B2AEE8B00E337A7 /* OneSIM.swift in Sources */,
 				E61BAE462B27664000E337A7 /* SignInView.swift in Sources */,
 				E61BAE442B27664000E337A7 /* onegbApp.swift in Sources */,
 				E61BAE612B29AFB800E337A7 /* GiftBoxView.swift in Sources */,

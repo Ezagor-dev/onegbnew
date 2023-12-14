@@ -32,45 +32,47 @@ struct ContentView: View {
 
     var body: some View {
         TabView(selection: $selectedTab) {
-            CampaignView()
+            OneSIMView()
                 .tabItem {
-                    Label("Campaign", systemImage: "megaphone.fill")
+                    Label("oneSIM", systemImage: "antenna.radiowaves.left.and.right")
                 }
                 .tag(0)
+            WalletView()
+                .tabItem {
+                    Label("Wallet", systemImage: "checkerboard.shield")
+                }
+                .tag(1)
 
             GameStoreView()
                 .tabItem {
                     Label("Games", systemImage: "gamecontroller.fill")
                 }
-                .tag(1)
-
-            WalletView()
-                .tabItem {
-                    Label("Wallet", systemImage: "wallet.pass.fill")
-                }
                 .tag(2)
 
-            PushBoxView()
+            
+
+            GiftBoxView()
                 .tabItem {
-                    Label("Inbox", systemImage: "envelope.fill")
+                    Label("Gift Box", systemImage: "gift.fill")
                 }
                 .tag(3)
 
-            MateSimView()
-                .tabItem {
-                    Label("MateSIM", systemImage: "antenna.radiowaves.left.and.right")
-                }
-                .tag(4)
+            
 
             PushBoxView()
                 .tabItem {
-                    Label("PushBox", systemImage: "tray.fill")
+                    Label("Inbox", systemImage: "tray.fill")
+                }
+                .tag(4)
+            MateSimView()
+                .tabItem {
+                    Label("Bring a buddy", systemImage: "person.fill.badge.plus")
                 }
                 .tag(5)
 
             TodayView()
                 .tabItem {
-                    Label("Today", systemImage: "calendar")
+                    Label("Donate", systemImage: "dollarsign.arrow.circlepath")
                 }
                 .tag(6)
         }
