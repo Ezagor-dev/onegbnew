@@ -66,11 +66,11 @@ struct OneSIMView: View {
                         PopularDestinationsView(destinations: destinations)
                         
                         // Country selection
-                        CountrySelectionView(countries: countries, action: { selectedCountry in
-                            self.selectedCountry = selectedCountry
-                            self.showingDetail = true
-                        })
-                        .sheet(isPresented: $showingDetail) {
+                        CountrySelectionView(countries: countries) { country in
+                                    self.selectedCountry = country
+                                    self.showingDetail = true
+                                }
+                        .popover(isPresented: $showingDetail) {
                             if let selectedCountry = selectedCountry {
                                 CountryDetailView(country: selectedCountry)
                             }
@@ -106,7 +106,9 @@ struct OneSIMView: View {
         let mtbBalance: Int
         
         var body: some View {
-            Button(action: {}) {
+            Button(action: {
+                //Gift box açılacak
+            }) {
                 HStack {
                     Text("\(mtbBalance) MTB")
                         .bold()
@@ -181,7 +183,7 @@ struct OneSIMView: View {
     
     struct CountrySelectionView: View {
         var countries: [Country]
-        var action: (Country) -> Void
+        var selectCountry: (Country) -> Void
         
         var body: some View {
             VStack(alignment: .leading) {
@@ -194,9 +196,9 @@ struct OneSIMView: View {
                 // Grid of countries
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 150))], spacing: 20) {
                     ForEach(countries, id: \.name) { country in
-                        CountryButtonView(country: country, action: {
-                                                self.action(country) // Calling the closure passed to the initializer
-                                            })
+                        CountryButtonView(country: country) {
+                                            selectCountry(country)
+                                        }
                     }
                 }
                 .padding(.horizontal)
