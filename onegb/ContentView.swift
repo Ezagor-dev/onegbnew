@@ -4,6 +4,9 @@
 //
 //  Created by Ezagor on 11.12.2023.
 //
+
+// bisohbet deneyimi de verebiliriz
+
 //davet et kazan
 //loyalt
 //bip mesajlar kısmı pushboxview
@@ -25,7 +28,10 @@ import SwiftUI
 import SafariServices
 import AVKit
 
-// tab view 
+//metabyte onebyte
+//gamebyte ply
+
+// tab view
 struct ContentView: View {
     // State variables for controlling views and data
     @State private var selectedTab: Int = 0
@@ -36,16 +42,16 @@ struct ContentView: View {
                 .tabItem {
                     Label("oneSIM", systemImage: "antenna.radiowaves.left.and.right")
                 }
-                .tag(0)
-            OneWalletView()
-                .tabItem {
-                    Label("Wallet", systemImage: "checkerboard.shield")
-                }
                 .tag(1)
+            MessageListView()
+                .tabItem {
+                    Label("oneBox", systemImage: "message.circle.fill")
+                }
+                .tag(0)
 
             GameStoreView()
                 .tabItem {
-                    Label("Games", systemImage: "gamecontroller.fill")
+                    Label("plyStore", systemImage: "gamecontroller.fill")
                 }
                 .tag(2)
 
@@ -53,13 +59,13 @@ struct ContentView: View {
 
             GiftBoxView()
                 .tabItem {
-                    Label("Gift Box", systemImage: "gift.fill")
+                    Label("Gift Bank", systemImage: "gift.fill")
                 }
                 .tag(3)
 
             
 
-            PushBoxView()
+            MessageListView()
                 .tabItem {
                     Label("Inbox", systemImage: "tray.fill")
                 }
