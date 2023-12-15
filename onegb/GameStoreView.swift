@@ -40,10 +40,17 @@ let sampleGames: [Game] = [
 // The GameStoreView that displays the game sections and their cards
 struct GameStoreView: View {
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading) {
-                ForEach(Category.allCases, id: \.self) { category in
-                    GameSectionView(category: category, games: sampleGames.filter { $0.category == category })
+        ZStack {
+            // Background
+            LinearGradient(gradient: Gradient(colors: [Color.black, Color("DarkGreen")]),
+                           startPoint: .top, endPoint: .bottom)
+            .ignoresSafeArea()
+            ScrollView {
+                VStack(alignment: .leading) {
+                    ForEach(Category.allCases, id: \.self) { category in
+                        GameSectionView(category: category, games: sampleGames.filter { $0.category == category })
+                            .padding(.horizontal)
+                    }
                 }
             }
         }
@@ -61,6 +68,8 @@ struct GameSectionView: View {
                 .font(.headline)
                 .padding(.leading)
                 .padding(.top, 10)
+                .foregroundColor(.white)
+                .shadow(color: .black,radius:3)
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 15) {
@@ -87,16 +96,20 @@ struct GameCard: View {
             
             Text(game.name)
                 .font(.caption)
+                .foregroundColor(.white)
+                .shadow(color: .black,radius:3)
             
             Text(game.reward)
                 .font(.caption2)
                 .foregroundColor(.green)
+                .shadow(color: .green,radius:3)
             
             Text(game.price)
                 .font(.caption2)
                 .foregroundColor(.secondary)
+                .shadow(color: .gray,radius:3)
         }
-        .frame(width: 180, height: 250)
+        .frame(width: 200, height: 250)
         .background(Color.gray.opacity(0.4))
         .cornerRadius(8)
     }

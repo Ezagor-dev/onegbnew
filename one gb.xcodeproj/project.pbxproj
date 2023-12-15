@@ -28,6 +28,9 @@
 		E61BAE742B2A053000E337A7 /* PromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61BAE732B2A053000E337A7 /* PromptView.swift */; };
 		E61BAE9D2B2AEE8B00E337A7 /* OneSIM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61BAE9C2B2AEE8B00E337A7 /* OneSIM.swift */; };
 		E61BAE9F2B2B14A800E337A7 /* CountryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61BAE9E2B2B14A800E337A7 /* CountryDetailView.swift */; };
+		E61BAEA12B2B40E500E337A7 /* OneWalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61BAEA02B2B40E400E337A7 /* OneWalletView.swift */; };
+		E61BAEA32B2B56C200E337A7 /* ActiveKeyboardField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61BAEA22B2B56C200E337A7 /* ActiveKeyboardField.swift */; };
+		E61BAEA52B2B587500E337A7 /* CardHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61BAEA42B2B587500E337A7 /* CardHome.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +57,9 @@
 		E61BAE732B2A053000E337A7 /* PromptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptView.swift; sourceTree = "<group>"; };
 		E61BAE9C2B2AEE8B00E337A7 /* OneSIM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneSIM.swift; sourceTree = "<group>"; };
 		E61BAE9E2B2B14A800E337A7 /* CountryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailView.swift; sourceTree = "<group>"; };
+		E61BAEA02B2B40E400E337A7 /* OneWalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneWalletView.swift; sourceTree = "<group>"; };
+		E61BAEA22B2B56C200E337A7 /* ActiveKeyboardField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveKeyboardField.swift; sourceTree = "<group>"; };
+		E61BAEA42B2B587500E337A7 /* CardHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardHome.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +114,9 @@
 				E61BAE732B2A053000E337A7 /* PromptView.swift */,
 				E61BAE9C2B2AEE8B00E337A7 /* OneSIM.swift */,
 				E61BAE9E2B2B14A800E337A7 /* CountryDetailView.swift */,
+				E61BAEA02B2B40E400E337A7 /* OneWalletView.swift */,
+				E61BAEA22B2B56C200E337A7 /* ActiveKeyboardField.swift */,
+				E61BAEA42B2B587500E337A7 /* CardHome.swift */,
 			);
 			path = onegb;
 			sourceTree = "<group>";
@@ -206,7 +215,9 @@
 			files = (
 				E61BAE9F2B2B14A800E337A7 /* CountryDetailView.swift in Sources */,
 				E61BAE6C2B29DEF100E337A7 /* Package.swift in Sources */,
+				E61BAEA12B2B40E500E337A7 /* OneWalletView.swift in Sources */,
 				E61BAE702B29F63D00E337A7 /* TextMessageView.swift in Sources */,
+				E61BAEA52B2B587500E337A7 /* CardHome.swift in Sources */,
 				E61BAE9D2B2AEE8B00E337A7 /* OneSIM.swift in Sources */,
 				E61BAE462B27664000E337A7 /* SignInView.swift in Sources */,
 				E61BAE442B27664000E337A7 /* onegbApp.swift in Sources */,
@@ -218,6 +229,7 @@
 				E61BAE532B276C9500E337A7 /* ContentView.swift in Sources */,
 				E61BAE652B29D28F00E337A7 /* PushBoxSpamView.swift in Sources */,
 				E61BAE5D2B27A66C00E337A7 /* GameStoreView.swift in Sources */,
+				E61BAEA32B2B56C200E337A7 /* ActiveKeyboardField.swift in Sources */,
 				E61BAE592B27865400E337A7 /* VideoPlayerView.swift in Sources */,
 				E61BAE742B2A053000E337A7 /* PromptView.swift in Sources */,
 				E61BAE672B29D74C00E337A7 /* ClickableGameView.swift in Sources */,
