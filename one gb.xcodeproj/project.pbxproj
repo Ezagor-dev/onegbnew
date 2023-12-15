@@ -31,6 +31,7 @@
 		E61BAEA12B2B40E500E337A7 /* OneWalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61BAEA02B2B40E400E337A7 /* OneWalletView.swift */; };
 		E61BAEA32B2B56C200E337A7 /* ActiveKeyboardField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61BAEA22B2B56C200E337A7 /* ActiveKeyboardField.swift */; };
 		E61BAEA52B2B587500E337A7 /* CardHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61BAEA42B2B587500E337A7 /* CardHome.swift */; };
+		E61BAEA72B2C93FD00E337A7 /* WalletEsentepeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61BAEA62B2C93FC00E337A7 /* WalletEsentepeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		E61BAEA02B2B40E400E337A7 /* OneWalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneWalletView.swift; sourceTree = "<group>"; };
 		E61BAEA22B2B56C200E337A7 /* ActiveKeyboardField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveKeyboardField.swift; sourceTree = "<group>"; };
 		E61BAEA42B2B587500E337A7 /* CardHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardHome.swift; sourceTree = "<group>"; };
+		E61BAEA62B2C93FC00E337A7 /* WalletEsentepeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletEsentepeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				E61BAEA02B2B40E400E337A7 /* OneWalletView.swift */,
 				E61BAEA22B2B56C200E337A7 /* ActiveKeyboardField.swift */,
 				E61BAEA42B2B587500E337A7 /* CardHome.swift */,
+				E61BAEA62B2C93FC00E337A7 /* WalletEsentepeView.swift */,
 			);
 			path = onegb;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 				E61BAE442B27664000E337A7 /* onegbApp.swift in Sources */,
 				E61BAE612B29AFB800E337A7 /* GiftBoxView.swift in Sources */,
 				E61BAE722B29FA2800E337A7 /* MessageInBoxView.swift in Sources */,
+				E61BAEA72B2C93FD00E337A7 /* WalletEsentepeView.swift in Sources */,
 				E61BAE572B27827100E337A7 /* SafariViewController.swift in Sources */,
 				E61BAE632B29BF7A00E337A7 /* TodayView.swift in Sources */,
 				E61BAE5F2B27AFC200E337A7 /* WalletView.swift in Sources */,

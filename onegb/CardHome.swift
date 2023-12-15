@@ -15,6 +15,7 @@ struct CardHome: View {
     @State private var cardHolderName: String = ""
     @State private var cvvCode: String = ""
     @State private var expireDate: String = ""
+    @State private var navigateToWallet: Bool = false
     
     var body: some View {
         
@@ -23,34 +24,16 @@ struct CardHome: View {
                 
                 /// Header View
             
-                HStack{
-                    Button{
-                        
-                    }label: {
-                        Image(systemName: "xmark")
-                            .font(.title)
-                            .foregroundColor(.black)
-                    }
-                    Text("Add Card")
-                        .font(.title3)
-                        .padding(.leading,10)
-                    
-                    Spacer(minLength: 0)
-                    
-                    Button{
-                        
-                    }label: {
-                        Image(systemName: "arrow.counterclockwise")
-                            .font(.title2)
-                    }
-                }
+                
                 CardView()
                 
                 Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
                 
-                Button{
-                    
-                }label: {
+                Button(action: {
+                    // You would typically add the card to your model/database here
+                    // After adding the card, you want to navigate to WalletView
+                    navigateToWallet = true
+                }) {
                     Label("Add Card", systemImage: "lock")
                         .fontWeight(.semibold)
                         .foregroundColor(.white)
@@ -61,9 +44,14 @@ struct CardHome: View {
                                 .fill(.blue.gradient)
                         }
                 }
-                .disableWithOpacity(cardNumber.count != 19 || expireDate.count != 5 || cardHolderName.isEmpty || cvvCode.count != 3)
+                .disabled(!isFormValid)
+                                .opacity(isFormValid ? 1 : 0.6)
             }
             .padding()
+            .navigationDestination(isPresented: $navigateToWallet) {
+                            // Here you should pass the necessary information to the WalletView
+                            WalletView()
+                        }
             .toolbar(.hidden, for:.navigationBar)
             .toolbar{
                 ToolbarItem(placement: .keyboard){
@@ -87,6 +75,9 @@ struct CardHome: View {
                 }
             }
         }
+        var isFormValid: Bool {
+                cardNumber.count == 19 && expireDate.count == 5 && !cardHolderName.isEmpty && cvvCode.count == 3
+            }
     }
     /// Card View
     @ViewBuilder
@@ -121,7 +112,8 @@ struct CardHome: View {
                         }
                         
                         cardNumber = String(cardNumber.prefix(19))
-                    }))
+                    })
+                    )
                         .font(.title3)
                         .keyboardType(.numberPad)
                         .focused($activeTF, equals: .cardNumber)

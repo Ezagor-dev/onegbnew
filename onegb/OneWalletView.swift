@@ -9,71 +9,63 @@ import SwiftUI
 
 struct OneWalletView: View {
     @State private var isAddingCard = false
+    @State private var isShowingWalletView = false
 
     var body: some View {
-        ZStack {
-            // Background gradient
-            LinearGradient(gradient: Gradient(colors: [Color.black.opacity(0.7), Color.black]),
-                           startPoint: .topLeading, endPoint: .bottomTrailing)
-                .ignoresSafeArea()
-            
-            // Floating bubbles might be replaced with your custom UI elements
-            floatingBubbles()
-            
-            VStack {
-                Spacer()
+        NavigationStack{
+            ZStack {
+                // Background gradient
+                LinearGradient(gradient: Gradient(colors: [Color.black.opacity(0.7), Color.black]),
+                               startPoint: .topLeading, endPoint: .bottomTrailing)
+                    .ignoresSafeArea()
                 
-                // Card representation
-                // Card representation
+                // Floating bubbles might be replaced with your custom UI elements
+                floatingBubbles()
+                
                 VStack {
+                    Spacer()
+                    
+                    // Card representation
+                    // Card representation
+                    VStack {
+                        HStack {
+                            Spacer()
+                            Image("card3") // Replace "card3" with your actual card image name
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 300, height: 200) // Adjust the frame size as needed
+                                .cornerRadius(5)
+                            Spacer()
+                        }
+                        .cornerRadius(5)
+                        .shadow(radius: 10)
+                        .padding(.horizontal) // Add horizontal padding to prevent the card from stretching to screen edges
+
+                        Text("Make payments much easier by using all your cards in one place")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .multilineTextAlignment(.center)
+                            .padding()
+                    }
+                    
+                    Spacer()
+                    
+                    // Action buttons
                     HStack {
-                        Spacer()
-                        Image("card3") // Replace "card3" with your actual card image name
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 300, height: 200) // Adjust the frame size as needed
-                            .cornerRadius(5)
-                        Spacer()
+                        skipButton
+                        addButton
                     }
-                    .cornerRadius(5)
-                    .shadow(radius: 10)
-                    .padding(.horizontal) // Add horizontal padding to prevent the card from stretching to screen edges
+                    
 
-                    Text("Make payments much easier by using all your cards in one place")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .multilineTextAlignment(.center)
-                        .padding()
+                    Spacer()
                 }
-                
-                Spacer()
-                
-                // Action buttons
-                HStack {
-                    Button(action: {}) {
-                        Text("Skip")
-                            .fontWeight(.bold)
-                    }
-                    .foregroundColor(.white)
-                    .padding()
-//add yor kk win 10k mtb 
-                    Button(action: { isAddingCard.toggle() }) {
-                        Text("+ Add a card")
-                            .fontWeight(.bold)
-                    }
-                    .foregroundColor(.white)
-                    .padding()
-                    .background(Color.blue)
-                    .cornerRadius(20)
-                }
-
-                Spacer()
             }
-        }
-        .sheet(isPresented: $isAddingCard) {
-            // Present Add Card View here
-            CardHome().preferredColorScheme(.light)
-            
+            .navigationDestination(isPresented: $isShowingWalletView) {
+                            WalletView() // Pass any required parameters to WalletView
+                        }
+                        .sheet(isPresented: $isAddingCard) {
+                            CardHome().preferredColorScheme(.light) // Make sure CardHome is ready for production
+                        }
         }
     }
     
@@ -98,6 +90,29 @@ struct OneWalletView: View {
             }
         }
     }
+    
+    var skipButton: some View {
+            Button(action: {
+                isShowingWalletView = true
+            }) {
+                Text("Skip")
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+                    .padding()
+            }
+        }
+
+        // Add card button
+        var addButton: some View {
+            Button(action: { isAddingCard.toggle() }) {
+                Text("+ Add your card win 10.000 MetaByte")
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(Color.blue)
+                    .cornerRadius(20)
+            }
+        }
 }
 
 struct OneWalletView_Previews: PreviewProvider {

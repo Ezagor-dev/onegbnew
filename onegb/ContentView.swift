@@ -37,7 +37,7 @@ struct ContentView: View {
                     Label("oneSIM", systemImage: "antenna.radiowaves.left.and.right")
                 }
                 .tag(0)
-            WalletView()
+            OneWalletView()
                 .tabItem {
                     Label("Wallet", systemImage: "checkerboard.shield")
                 }
