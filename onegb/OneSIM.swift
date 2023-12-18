@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+var userMetaByteBalance = 130000
 
 struct Country {
     var name: String
@@ -55,7 +56,7 @@ struct OneSIMView: View {
                         HStack {
                             UserProfileView(gbBalance: 35, mtbBalance: 78000)
                             Spacer()
-                            MTBBalanceView(mtbBalance: 130000)
+                            MTBBalanceView(mtbBalance: userMetaByteBalance)
                         }
                         .padding()
                         

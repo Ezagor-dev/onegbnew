@@ -48,27 +48,33 @@ struct CompanyChatbot: Identifiable {
 // gamebyte da verebilir hediye olarak 
 
 
-// Define your MessageListView
+// Define your MessageListViewa
 struct MessageListView: View {
     @State private var selectedChatbot: CompanyChatbot? = nil
+    
+    @State private var chatbots: [CompanyChatbot]
 
-    // Sample data for the list
-    let chatbots = [
-        CompanyChatbot(name: "Kazan Kazan", lastMessage: "Kazan Kazan 4 GB değerinde günün sorusu geldi...", metaByteCount: 15, logoName: "kazan-kazan"),
-        CompanyChatbot(name: "Boş Yok!", lastMessage: "Boş Yok! 4 GB değerinde günün sorusu geldi...", metaByteCount: 14, logoName: "bos-yok"),
-        CompanyChatbot(name: "BiSohbet", lastMessage: "BiSohbet 4 GB değerinde günün sorusu geldi...", metaByteCount: 13, logoName: "bisohbet"),
-        CompanyChatbot(name: "Dinlet Kazan", lastMessage: "Dinlet Kazan 4 GB değerinde günün sorusu geldi...", metaByteCount: 12, logoName: "dinlet-kazan"),
-        CompanyChatbot(name: "Kim 20 GB İster?", lastMessage: "Kim 20 GB İster? 4 GB değerinde günün sorusu geldi...", metaByteCount: 11, logoName: "kim-gb-ister"),
-        CompanyChatbot(name: "Taraftar+", lastMessage: "Taraftar+ 4 GB değerinde günün sorusu geldi...", metaByteCount: 10, logoName: "taraftarplus"),
-        CompanyChatbot(name: "Fenerbahçe Taraftar Kart", lastMessage: "Fenerbahçe Taraftar Kart 4 GB değerinde günün sorusu geldi...", metaByteCount: 9, logoName: "taraftarkart"),
-        CompanyChatbot(name: "Şut ve Kazan", lastMessage: "Şut ve Kazan 4 GB değerinde günün sorusu geldi...", metaByteCount: 8, logoName: "sut-ve-kazan"),
-        CompanyChatbot(name: "BiSohbet App", lastMessage: "BiSohbet App 4 GB değerinde günün sorusu geldi...", metaByteCount: 7, logoName: "bisohbet"),
-        CompanyChatbot(name: "Kim GB İster App", lastMessage: "Kim GB İster App 4 GB değerinde günün sorusu geldi...", metaByteCount: 6, logoName: "kimgbisterapp"),
-        CompanyChatbot(name: "Pepsi", lastMessage: "Pepsi 4 GB değerinde günün sorusu geldi...", metaByteCount: 5, logoName: "pepsi"),
-        CompanyChatbot(name: "Tosla", lastMessage: "Tosla 4 GB değerinde günün sorusu geldi...", metaByteCount:4, logoName: "tosla"),
-        CompanyChatbot(name: "Puan Harca", lastMessage: "Puan Harca 4 GB değerinde günün sorusu geldi...", metaByteCount: 3, logoName: "puanharca"),
-        // Add other chatbots here
-    ]
+        init() {
+            // Sample data for the list
+            _chatbots = State(initialValue: [
+                CompanyChatbot(name: "Kazan Kazan", lastMessage: "Kazan Kazan 4 GB değerinde günün sorusu geldi...", metaByteCount: 15, logoName: "kazan-kazan"),
+                CompanyChatbot(name: "Boş Yok!", lastMessage: "Boş Yok! 4 GB değerinde günün sorusu geldi...", metaByteCount: 14, logoName: "bos-yok"),
+                CompanyChatbot(name: "BiSohbet", lastMessage: "BiSohbet 4 GB değerinde günün sorusu geldi...", metaByteCount: 13, logoName: "bisohbet"),
+                CompanyChatbot(name: "Dinlet Kazan", lastMessage: "Dinlet Kazan 4 GB değerinde günün sorusu geldi...", metaByteCount: 12, logoName: "dinlet-kazan"),
+                CompanyChatbot(name: "Kim 20 GB İster?", lastMessage: "Kim 20 GB İster? 4 GB değerinde günün sorusu geldi...", metaByteCount: 11, logoName: "kim-gb-ister"),
+                CompanyChatbot(name: "Taraftar+", lastMessage: "Taraftar+ 4 GB değerinde günün sorusu geldi...", metaByteCount: 10, logoName: "taraftarplus"),
+                CompanyChatbot(name: "Fenerbahçe Taraftar Kart", lastMessage: "Fenerbahçe Taraftar Kart 4 GB değerinde günün sorusu geldi...", metaByteCount: 9, logoName: "taraftarkart"),
+                CompanyChatbot(name: "Şut ve Kazan", lastMessage: "Şut ve Kazan 4 GB değerinde günün sorusu geldi...", metaByteCount: 8, logoName: "sut-ve-kazan"),
+                CompanyChatbot(name: "BiSohbet App", lastMessage: "BiSohbet App 4 GB değerinde günün sorusu geldi...", metaByteCount: 7, logoName: "bisohbet"),
+                CompanyChatbot(name: "Kim GB İster App", lastMessage: "Kim GB İster App 4 GB değerinde günün sorusu geldi...", metaByteCount: 6, logoName: "kimgbisterapp"),
+                CompanyChatbot(name: "Pepsi", lastMessage: "Pepsi 4 GB değerinde günün sorusu geldi...", metaByteCount: 5, logoName: "pepsi"),
+                CompanyChatbot(name: "Tosla", lastMessage: "Tosla 4 GB değerinde günün sorusu geldi...", metaByteCount:4, logoName: "tosla"),
+                CompanyChatbot(name: "Puan Harca", lastMessage: "Puan Harca 4 GB değerinde günün sorusu geldi...", metaByteCount: 3, logoName: "puanharca"),
+                // Add other chatbots here
+                // Your existing CompanyChatbot instances
+            ].sorted(by: { $0.metaByteCount > $1.metaByteCount }))
+        }
+    
     var maxMetaByteCount: Int {
             chatbots.max(by: { $0.metaByteCount < $1.metaByteCount })?.metaByteCount ?? 0
         }
