@@ -17,16 +17,18 @@ struct Messages: Identifiable {
 
 struct ChatbotDetailView: View {
 
-    let chatbot: CompanyChatbot
+    @Binding var chatbot: CompanyChatbot
     @State private var newMessage: String = ""
     
     // Sample messages
     @State private var messages: [Messages]
+    var updateChatbots: () -> Void
     
-    init(chatbot: CompanyChatbot) {
-        self.chatbot = chatbot
-        _messages = State(initialValue: [
-            Messages(id: 0, content: chatbot.lastMessage, date: "Tuesday, Dec 15", company: chatbot.name),
+    init(chatbot: Binding<CompanyChatbot>, updateChatbots: @escaping () -> Void) {
+            self._chatbot = chatbot
+            self.updateChatbots = updateChatbots
+            self._messages = State(initialValue: [
+                Messages(id: 0, content: chatbot.wrappedValue.lastMessage, date: "Tuesday, Dec 15", company: chatbot.wrappedValue.name),
             // ... add more messages
         ])
     }
@@ -47,15 +49,16 @@ struct ChatbotDetailView: View {
                     }
                 }
             }
+            .onAppear {
+                        // Reduce the metaByteCount of the selected chatbot to zero
+                        // and update the list in MessageListView
+                chatbot.metaByteCount = 0
+                            updateChatbots()
+                    }
             .navigationBarTitle(Text(chatbot.name), displayMode: .inline)
             .padding()
         }
     }
 
-struct ChatbotDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            ChatbotDetailView(chatbot: CompanyChatbot(name: "Kazan Kazan", lastMessage: "Sample last message", metaByteCount: 15, logoName: "kazan-kazan"))
-        }
-    }
-}
+
+
